@@ -51,4 +51,3 @@ getAllRecords().then(function(results){
 }).catch((err)=>{
   throw err;
 });
-
