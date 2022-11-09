@@ -1,6 +1,6 @@
 var mysql  = require('mysql');
 
-require('dotenv').config();
+require('dotenv').config('../../.env');
 
 var connection = mysql.createConnection({
   host      :   process.env.host,
@@ -41,7 +41,7 @@ connection.query('SELECT nombres, apellidoPaterno, apellidoMaterno FROM paciente
   });
 });
 */
-/*
+
 function getAllProducts(){
   return new Promise(function (resolve, reject){
     connection.query('SELECT name FROM products', function(error, results, fields){
@@ -52,7 +52,7 @@ function getAllProducts(){
     });
   })
 }
-
+/*
 function getAllCategories(){
   return new Promise(function (resolve, reject){
     connection.query('SELECT description from category', function(error, results, fields){
@@ -74,6 +74,7 @@ function getProductsByCategories(){
     });
   })
 }
+*/
 
 getAllProducts().then(function(results, i=1){
   results.forEach(function(campo) {
@@ -84,6 +85,7 @@ getAllProducts().then(function(results, i=1){
   throw err;
 });
 
+/*
 getAllCategories().then(function(results, i=1){
   results.forEach(function(campo){
     console.log(i + ' ' +campo.description);
