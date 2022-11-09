@@ -31,7 +31,7 @@ function GetAllCategories(){
     connection.query('SELECT description from category where id = 1', function(error, results, fields){
         return(
             <p>{results}</p>
-        )        
+        )
         });
 }
 
