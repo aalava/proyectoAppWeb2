@@ -1,9 +1,16 @@
 import './App.css';
-import GetAllCategories from './GetAllCategories';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Products from "./pages/Products";
 
 function App() {
   return (
-    <GetAllCategories/>
+    <div className="app">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Products/>} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
