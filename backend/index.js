@@ -21,9 +21,39 @@ app.get("/", (req, res) => {
 
 app.get("/products", (req, res) => {
     const q = "SELECT * from products";
+
     connection.query(q, function(error, results, fields){
         if (error) return res.json(error);
         return res.json(results);   
+    })
+})
+
+app.get("/products/:id", (req, res) => {
+    const productId = req.params.id;
+    const q = "SELECT * from products where id = ?";
+
+    connection.query(q, [productId], function(error, results, fields){
+        if (error) return res.json(error);
+        return res.json(results);
+    })
+})
+
+app.get("/productsByCategory/:id", (req, res) => {
+    const categoryId = req.params.id;
+    const q = "SELECT * from products where id_category = ?";
+
+    connection.query(q, [categoryId], function(error, results, fields){
+        if (error) return res.json(error);
+        return res.json(results);
+    })
+})
+
+app.get("/carrusel", (req, res) => {
+    const q = "SELECT * from products ORDER BY rand() LIMIT 5";
+
+    connection.query(q, function(error, results, fields){
+        if (error) return res.json(error);
+        return res.json(results);
     })
 })
 
