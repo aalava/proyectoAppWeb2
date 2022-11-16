@@ -23,7 +23,7 @@ const Products = () => {
     return (
         <div className="container-fluid col-sm-7">
             <div className="row">
-               <div className="page-title-box">
+                <div className="page-title-box">
                     <h4 className="page-title">Listado de Productos</h4>
                 </div>    
             </div>
